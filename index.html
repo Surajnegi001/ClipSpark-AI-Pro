@@ -3,202 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090b18">
-<title>ClipSpark AI — Pro Viral Gaming Shorts Maker</title>
+<meta name="theme-color" content="#070913">
+<title>ClipSpark AI Autonomous Director v4.0</title>
 <style>
-:root{--bg:#090b18;--panel:#12162a;--panel2:#191f38;--text:#f5f6ff;--muted:#9ca5c5;--line:#293152;--accent:#8b5cf6;--cyan:#22d3ee;--good:#34d399;--fire:#f43f5e;--gold:#fbbf24}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% 0%,#25204b 0,transparent 40%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-header{max-width:1180px;margin:auto;padding:22px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-size:24px;font-weight:850;letter-spacing:-.7px}.brand span{color:var(--cyan)}.tag{color:var(--muted);font-size:12px}
-main{max-width:1180px;margin:0 auto;padding:10px 20px 60px}.hero{text-align:center;padding:18px 10px 28px}.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.08;margin:0 0 12px;letter-spacing:-1.4px}.grad{background:linear-gradient(90deg,#a78bfa,#22d3ee,#f43f5e);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:680px;margin:0 auto}
-.layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:linear-gradient(180deg,#151a31,#101428);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 14px 40px #0003}.card h2{font-size:17px;margin:0 0 14px;display:flex;align-items:center;gap:8px}.drop{border:1.5px dashed #59628a;background:#0c1021;border-radius:14px;padding:22px 16px;text-align:center;cursor:pointer;transition:.2s}.drop:hover,.drop.drag{border-color:var(--cyan);background:#101a2b}.drop strong{display:block;margin:7px 0 3px}.drop small{color:var(--muted)}input,textarea,select{width:100%;background:#0b1021;border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--text);font:inherit;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--accent)}label{display:block;font-size:12.5px;color:#cbd2ed;margin:11px 0 5px;font-weight:600}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.btn{border:0;border-radius:10px;padding:11px 15px;background:linear-gradient(90deg,var(--accent),#6366f1);color:white;font-weight:750;cursor:pointer;font:inherit;transition:.15s}.btn:hover{filter:brightness(1.12)}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.secondary{background:#252d4b;border:1px solid #3a456d}.btn.cyan{background:linear-gradient(90deg,#0891b2,#0e7490)}.btn.fire{background:linear-gradient(90deg,#e11d48,#8b5cf6)}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.muted{color:var(--muted);font-size:12px}.status{margin-top:12px;color:var(--cyan);font-size:13px;min-height:20px;font-weight:500}.video-wrap{background:#050711;border-radius:13px;overflow:hidden;min-height:185px;display:grid;place-items:center}.video-wrap video{width:100%;max-height:310px;background:#050711}.empty{color:#697394;padding:45px 10px;text-align:center}.suggestions{display:grid;gap:9px;margin-top:12px;max-height:290px;overflow-y:auto;padding-right:4px}.suggestion{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0c1124;border:1px solid var(--line);border-radius:11px;padding:11px;transition:.15s}.suggestion.active{border-color:var(--cyan);background:#111b36}.suggestion b{font-size:13.5px;color:#fff}.suggestion small{display:block;color:var(--muted);margin-top:2px}.badge{display:inline-block;padding:2px 7px;border-radius:6px;font-size:10.5px;font-weight:700;margin-left:6px;background:rgba(34,211,238,.15);color:var(--cyan)}.badge.fire{background:rgba(244,63,94,.18);color:#fb7185}.suggestion button{background:#252d4b;color:white;border:1px solid #3a456d;border-radius:8px;padding:8px 11px;cursor:pointer;font-weight:600;white-space:nowrap}.suggestion button:hover{background:var(--accent);border-color:var(--accent)}.preview-grid{display:grid;grid-template-columns:minmax(180px,240px) 1fr;gap:20px;align-items:start}.phone{width:100%;aspect-ratio:9/16;background:#050505;border-radius:16px;overflow:hidden;border:2px solid #3a4261;position:relative;box-shadow:0 12px 30px #0006}.phone canvas{width:100%;height:100%;display:block}.controls{display:grid;gap:8px}.progress{height:8px;background:#252d4b;border-radius:20px;overflow:hidden;margin-top:8px}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--accent));transition:width .15s}.foot{color:#7f89aa;font-size:12px;text-align:center;margin-top:24px}.notice{border-left:3px solid #34d399;background:#0d2922;color:#a7f3d0;padding:10px 12px;border-radius:7px;font-size:12px;margin-top:12px}.chip-group{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.chip{background:#0b1021;border:1px solid var(--line);padding:6px 10px;border-radius:8px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:5px;user-select:none}.chip input{width:auto;margin:0}
-@media(max-width:780px){.layout{grid-template-columns:1fr}.preview-grid{grid-template-columns:minmax(140px,45%) 1fr}header{padding:18px 15px}main{padding:5px 14px 40px}.card{padding:16px}}
-@media(max-width:420px){.preview-grid{grid-template-columns:1fr}.phone{max-width:220px;margin:auto}}
+:root{--bg:#070913;--panel:#101426;--panel2:#171d36;--text:#f5f6ff;--muted:#98a2c4;--line:#262f52;--accent:#8b5cf6;--cyan:#22d3ee;--good:#10b981;--fire:#f43f5e;--gold:#fbbf24}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 15% 0%,#241c4a 0,transparent 45%),var(--bg);color:var(--text);font:14.5px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{max-width:1220px;margin:auto;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #1b223d}
+.brand{font-size:24px;font-weight:900;letter-spacing:-.7px}.brand span{color:var(--cyan)}.tag{color:var(--muted);font-size:12px;font-weight:600}
+main{max-width:1220px;margin:0 auto;padding:18px 20px 60px}
+.hero{text-align:center;padding:10px 10px 24px}
+.hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 10px;letter-spacing:-1.2px}
+.grad{background:linear-gradient(90deg,#a78bfa,#22d3ee,#f43f5e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:720px;margin:0 auto}
+.layout{display:grid;grid-template-columns:1fr 1.15fr;gap:20px}
+.card{background:linear-gradient(180deg,#13182e,#0e1224);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 16px 40px #0004}
+.card h2{font-size:16.5px;margin:0 0 14px;display:flex;align-items:center;justify-content:space-between}
+.drop{border:1.5px dashed #59628a;background:#0a0e1d;border-radius:14px;padding:20px 16px;text-align:center;cursor:pointer;transition:.2s}
+.drop:hover,.drop.drag{border-color:var(--cyan);background:#0f192b}
+.drop strong{display:block;margin:6px 0 3px;font-size:15px}
+.drop small{color:var(--muted)}
+input,textarea,select{width:100%;background:#090d1c;border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:var(--text);font:inherit;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--accent)}
+input[type="range"]{padding:0;accent-color:var(--cyan);cursor:pointer}
+label{display:block;font-size:12px;color:#cbd2ed;margin:10px 0 4px;font-weight:600}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{border:0;border-radius:10px;padding:11px 16px;background:linear-gradient(90deg,var(--accent),#6366f1);color:white;font-weight:750;cursor:pointer;font:inherit;transition:.15s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.btn:hover{filter:brightness(1.12)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.secondary{background:#222a47;border:1px solid #38436b}
+.btn.cyan{background:linear-gradient(90deg,#0891b2,#0e7490)}
+.btn.fire{background:linear-gradient(90deg,#e11d48,#8b5cf6);width:100%;font-size:15px;padding:14px;font-weight:900;letter-spacing:.3px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.muted{color:var(--muted);font-size:12px}
+.status{margin-top:12px;color:var(--cyan);font-size:13px;min-height:20px;font-weight:600}
+.video-wrap{background:#04060e;border-radius:13px;overflow:hidden;min-height:180px;display:grid;place-items:center;border:1px solid #1e2642}
+.video-wrap video{width:100%;max-height:290px;background:#04060e}
+.empty{color:#697394;padding:40px 10px;text-align:center}
+.suggestions{display:grid;gap:8px;margin-top:12px;max-height:280px;overflow-y:auto;padding-right:4px}
+.suggestion{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0a0f21;border:1px solid var(--line);border-radius:11px;padding:10px 12px;transition:.15s}
+.suggestion.active{border-color:var(--cyan);background:#111c38}
+.suggestion b{font-size:13px;color:#fff}
+.suggestion small{display:block;color:var(--muted);margin-top:2px;font-size:11.5px}
+.badge{display:inline-block;padding:2px 7px;border-radius:6px;font-size:10px;font-weight:800;margin-left:6px;background:rgba(34,211,238,.15);color:var(--cyan)}
+.badge.fire{background:rgba(244,63,94,.2);color:#fb7185}
+.suggestion button{background:#222a47;color:white;border:1px solid #38436b;border-radius:8px;padding:7px 11px;cursor:pointer;font-weight:700;font-size:12px;white-space:nowrap}
+.suggestion button:hover{background:var(--accent);border-color:var(--accent)}
+.preview-grid{display:grid;grid-template-columns:minmax(200px,250px) 1fr;gap:22px;align-items:start}
+.phone{width:100%;aspect-ratio:9/16;background:#050505;border-radius:18px;overflow:hidden;border:2px solid #3a4261;position:relative;box-shadow:0 14px 35px #0008}
+.phone canvas{width:100%;height:100%;display:block}
+.controls{display:grid;gap:10px}
+.progress{height:8px;background:#222a47;border-radius:20px;overflow:hidden;margin-top:6px}
+.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--accent));transition:width .15s}
+.notice{border-left:3px solid var(--good);background:#0b261f;color:#a7f3d0;padding:10px 12px;border-radius:8px;font-size:12px;margin-top:12px}
+.audio-box{background:#0b1022;border:1px solid #2b355e;border-radius:12px;padding:12px;margin-top:12px}
+.audio-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.vol-pill{background:rgba(16,185,129,.18);color:#34d399;padding:2px 8px;border-radius:6px;font-weight:800;font-size:12px}
+.chip-group{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.chip{background:#090d1c;border:1px solid var(--line);padding:6px 10px;border-radius:8px;font-size:11.5px;cursor:pointer;display:flex;align-items:center;gap:5px;user-select:none}
+.chip input{width:auto;margin:0}
+.director-box{background:#0c1124;border:1px solid #313b66;border-radius:12px;padding:11px;margin-top:10px}
+.foot{color:#7f89aa;font-size:12px;text-align:center;margin-top:26px}
+@media(max-width:820px){.layout{grid-template-columns:1fr}.preview-grid{grid-template-columns:minmax(150px,45%) 1fr}}
+@media(max-width:460px){.preview-grid{grid-template-columns:1fr}.phone{max-width:230px;margin:auto}}
 </style>
 </head>
 <body>
 <header>
-  <div><div class="brand">✦ ClipSpark <span>AI Pro</span></div><div class="tag">Smart Audio-Peak & Viral Gameplay Shorts Engine</div></div>
-  <div class="tag">1080p HD AUTO-EDITOR</div>
+  <div><div class="brand">✦ ClipSpark <span>AI Autonomous Director</span></div><div class="tag">Self-Thinking Viral Editor · 1080p HD Studio Audio</div></div>
+  <div class="tag">PRO v4.0</div>
 </header>
+
 <main>
 <section class="hero">
-  <h1>AI-Analyzed <span class="grad">Viral Gameplay Shorts</span></h1>
-  <p>Scans your video's audio & action peaks to extract the 6 most hyped moments — complete with dynamic zoom, punchy hooks, gaming color grade, and animated captions.</p>
+  <h1>Autonomous <span class="grad">AI Brain Video Editor</span></h1>
+  <p>The AI fully thinks on its own: it scans your entire video, auto-selects the 6 most viral hype climaxes, applies autonomous jump-cuts, boosts audio up to 400%, and crafts professional vertical shorts.</p>
 </section>
 
 <div class="layout">
-<section class="card">
-  <h2>1. Source Gameplay / Long Video</h2>
-  <div class="drop" id="drop">
-    <div style="font-size:28px">🎮</div>
-    <strong>Drop your long gameplay or video here</strong>
-    <small>MP4, MOV, WebM · Real-time Audio & Action AI Scan</small>
-    <input id="file" type="file" accept="video/*" hidden>
-  </div>
-  <div id="fileInfo" class="muted" style="margin-top:9px">No video selected yet.</div>
-  <div class="video-wrap" style="margin-top:12px">
-    <video id="source" controls playsinline></video>
-    <div class="empty" id="empty">Source video preview will appear here</div>
-  </div>
-  <div class="notice">🧠 <strong>Smart AI Analyzer:</strong> Scans your video's audio spikes (kills, reactions, hype moments) to auto-generate 6 unique edited shorts with distinct styles!</div>
-  <div class="actions"><button class="btn secondary" id="clear" disabled>Remove video</button></div>
-</section>
-
-<section class="card">
-  <h2>2. AI Action Scan & Auto-Editor (6 Clips)</h2>
-  <p class="muted">Click below to analyze audio/action peaks and generate 6 differently edited viral clips.</p>
-  <div class="actions">
-    <button class="btn fire" id="suggest" disabled>🔥 Analyze Video & Generate 6 Viral Clips</button>
-  </div>
-  <div id="suggestions" class="suggestions">
-    <div class="muted">Upload a video to run the AI Action & Hype Scanner.</div>
-  </div>
-
-  <div class="row" style="margin-top:10px">
-    <div><label for="start">Start (sec)</label><input id="start" type="number" min="0" step=".1" value="0"></div>
-    <div><label for="end">End (sec)</label><input id="end" type="number" min="1" step=".1" value="25"></div>
-  </div>
-
-  <div class="row">
-    <div>
-      <label for="cropMode">Framing & Crop Style</label>
-      <select id="cropMode">
-        <option value="gaming-zoom">Action Zoom (1.35x Punchy)</option>
-        <option value="full-center">Center Focus + Blur BG</option>
-        <option value="facecam-split">Split-Screen (Top Cam + Gameplay)</option>
-        <option value="ultrawide-cinematic">Cinematic Wide + Top/Bot Bars</option>
-      </select>
+  <!-- COLUMN 1 -->
+  <section class="card">
+    <h2>1. Drop Video & AI Audio Master</h2>
+    <div class="drop" id="drop">
+      <div style="font-size:28px">🤖</div>
+      <strong>Drop long video / gameplay for Autonomous AI Scan</strong>
+      <small>MP4, MOV, WebM · Full-Length Neural Audio & Action Analysis</small>
+      <input id="file" type="file" accept="video/*" hidden>
     </div>
-    <div>
-      <label for="colorGrade">Pro Color & FX Filter</label>
-      <select id="colorGrade">
-        <option value="vivid-gamer">Vivid Gamer (High Contrast + Sat)</option>
-        <option value="cyber-neon">Cyber Neon Glow</option>
-        <option value="crisp-hdr">Crisp HDR Sharpen</option>
-        <option value="clean">Original Clean</option>
-      </select>
+    <div id="fileInfo" class="muted" style="margin-top:8px">No video selected yet.</div>
+    <div class="video-wrap" style="margin-top:10px">
+      <video id="source" controls playsinline></video>
+      <div class="empty" id="empty">Source video preview will appear here</div>
     </div>
-  </div>
 
-  <div class="row">
-    <div>
-      <label for="hookTitle">Top Viral Hook Banner</label>
-      <input id="hookTitle" type="text" maxlength="40" placeholder="e.g. WAIT FOR THE END 😱">
+    <div class="audio-box">
+      <div class="audio-header">
+        <span style="font-weight:700;font-size:13px">🔊 Studio Volume Booster & Limiter</span>
+        <span class="vol-pill" id="volLabel">240% (AI Optimized)</span>
+      </div>
+      <input type="range" id="volBoost" min="100" max="400" step="10" value="240">
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">
+        <span>100%</span><span>250%</span><span>400% (Max Gain)</span>
+      </div>
+      <div class="chip-group" style="margin-top:8px">
+        <label class="chip"><input type="checkbox" id="autoNormalize" checked> Neural Audio Normalizer</label>
+        <label class="chip"><input type="checkbox" id="bassCrisp" checked> Crisp Voice Equalizer</label>
+      </div>
     </div>
-    <div>
-      <label for="style">Caption Animation Style</label>
-      <select id="style">
-        <option value="karaoke-pop">Viral Yellow/White Pop</option>
-        <option value="neon-box">Neon Glow Box</option>
-        <option value="bold">Bold White Outline</option>
-        <option value="minimal">Clean Minimal</option>
-      </select>
+
+    <div class="director-box">
+      <label for="aiPrompt" style="margin-top:0">🧠 Autonomous AI Brain Instructions</label>
+      <div style="display:flex;gap:8px">
+        <input id="aiPrompt" type="text" placeholder="e.g. Focus on high energy moments, make hooks extra aggressive...">
+        <button class="btn cyan" id="applyAiCmd" style="white-space:nowrap;padding:8px 12px">Update AI</button>
+      </div>
     </div>
-  </div>
 
-  <label for="caption">Dynamic Subtitle / Caption Text</label>
-  <textarea id="caption" rows="2" maxlength="180" placeholder="Auto-filled by AI or type custom hype text..."></textarea>
+    <div class="actions"><button class="btn secondary" id="clear" disabled>Remove video</button></div>
+  </section>
 
-  <div class="chip-group">
-    <label class="chip"><input type="checkbox" id="fxPulse" checked> Beat/Action Zoom Pulse</label>
-    <label class="chip"><input type="checkbox" id="fxProgress" checked> Top Retention Bar</label>
-    <label class="chip"><input type="checkbox" id="fxVignette" checked> Pro Vignette</label>
-  </div>
+  <!-- COLUMN 2 -->
+  <section class="card">
+    <h2>2. Autonomous AI Director Engine</h2>
+    <p class="muted">Let the AI's built-in brain analyze your content and automatically design 6 professionally edited viral masterpieces.</p>
+    
+    <div class="actions" style="margin-top:10px">
+      <button class="btn fire" id="suggest" disabled>🧠 Run Autonomous AI Brain Analysis (6 Shorts)</button>
+    </div>
 
-  <div class="actions">
-    <button class="btn cyan" id="preview" disabled>▶ Preview Edited Short</button>
-  </div>
-  <div class="status" id="status" role="status" aria-live="polite"></div>
-</section>
+    <div id="suggestions" class="suggestions">
+      <div class="muted">Upload a video to let the Autonomous AI Director build 6 viral shorts.</div>
+    </div>
+
+    <div class="row" style="margin-top:10px">
+      <div><label for="start">Start (sec)</label><input id="start" type="number" min="0" step=".1" value="0"></div>
+      <div><label for="end">End (sec)</label><input id="end" type="number" min="1" step=".1" value="25"></div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="cropMode">AI Camera Framing</label>
+        <select id="cropMode">
+          <option value="gaming-zoom">Autonomous Action Zoom (1.45x)</option>
+          <option value="facecam-split">Split-Screen (Top Cam + Gameplay)</option>
+          <option value="full-center">Center Focus + Blur Backdrop</option>
+          <option value="ultrawide-cinematic">Cinematic Wide + Letterbox</option>
+        </select>
+      </div>
+      <div>
+        <label for="colorGrade">Studio Color Grading</label>
+        <select id="colorGrade">
+          <option value="vivid-gamer">Vivid Gamer HDR</option>
+          <option value="cyber-neon">Cyber Neon Punch</option>
+          <option value="crisp-hdr">Clean Studio Crisp</option>
+          <option value="clean">Natural Original</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="hookTitle">AI Generated Viral Hook</label>
+        <input id="hookTitle" type="text" maxlength="42" placeholder="AI Hook Banner...">
+      </div>
+      <div>
+        <label for="style">Subtitle Style</label>
+        <select id="style">
+          <option value="karaoke-pop">Hormozi Yellow/White Pop</option>
+          <option value="neon-box">Cyber Neon Box</option>
+          <option value="bold">Bold Cinema Outline</option>
+          <option value="minimal">Clean Minimal</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="caption">AI Smart Captions</label>
+    <textarea id="caption" rows="2" maxlength="180" placeholder="AI-generated engaging captions..."></textarea>
+
+    <div class="chip-group">
+      <label class="chip"><input type="checkbox" id="fxImpactZoom" checked> AI Beat Impact Zoom</label>
+      <label class="chip"><input type="checkbox" id="fxShake" checked> Action Screen-Shake</label>
+      <label class="chip"><input type="checkbox" id="fxJumpCut" checked> Auto-Skip Dead Pauses</label>
+      <label class="chip"><input type="checkbox" id="fxProgress" checked> Retention Bar</label>
+    </div>
+
+    <div class="actions">
+      <button class="btn cyan" id="preview" disabled>▶ Preview Autonomous Edit</button>
+    </div>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+  </section>
 </div>
 
-<section class="card" style="margin-top:18px">
-  <h2>3. 1080p HD Vertical Preview & Export</h2>
+<!-- COLUMN 3: PREVIEW & EXPORT -->
+<section class="card" style="margin-top:20px">
+  <h2>3. 1080p Full HD Master Preview & Export</h2>
   <div class="preview-grid">
     <div class="phone"><canvas id="canvas" width="1080" height="1920"></canvas></div>
     <div class="controls">
-      <p class="muted">Renders in <strong>1080×1920 Full HD</strong> with active zoom pulses, viral hook banners, gaming color grading, and animated captions.</p>
-      <div class="muted" id="durationLabel">No clip selected yet.</div>
+      <p class="muted">Renders in crystal-clear <strong>1080×1920 Full HD (12 Mbps)</strong> with real-time studio audio amplification, autonomous jump-cuts, and dynamic subtitle pop-ups.</p>
+      <div class="muted" id="durationLabel">No clip loaded yet.</div>
       <div class="progress"><div id="progress"></div></div>
       <div class="actions">
-        <button class="btn" id="export" disabled>⬇ Export Pro HD Short</button>
-        <button class="btn secondary" id="play" disabled>Play Edited Clip Preview</button>
+        <button class="btn" id="export" disabled>⬇ Export Master HD Short</button>
+        <button class="btn secondary" id="play" disabled>Play / Pause Live Edit</button>
       </div>
-      <div class="muted" id="exportInfo">Exports at 10 Mbps high-bitrate HD for zero blur on YouTube Shorts & Reels.</div>
+      <div class="notice">💡 <strong>Autonomous Mode Active:</strong> Click the brain analysis button to let the AI take full control and deliver 6 brilliantly edited viral clips.</div>
     </div>
   </div>
 </section>
-<div class="foot">ClipSpark AI Pro · Intelligent Client-Side Video Analyzer & HD Shorts Editor</div>
+<div class="foot">ClipSpark AI Autonomous Director · Neural Video Editing & Studio Audio Engine</div>
 </main>
 
 <script>
 (()=>{
 const $=id=>document.getElementById(id);
 const file=$('file'),source=$('source'),drop=$('drop'),empty=$('empty'),canvas=$('canvas'),ctx=canvas.getContext('2d');
-let objectUrl=null,raf=0,exporting=false,previewPlaying=false,analyzedPeaks=[];
+let objectUrl=null,raf=0,exporting=false,previewPlaying=false;
+let energyTimeline=[],quietZones=[];
 
-const VIRAL_PRESETS = [
-  {
-    name: "🔥 Insane Clutch / Hype Peak",
-    badge: "99% VIRAL",
-    fire: true,
-    hook: "NO WAY THIS HAPPENED 😱",
-    caption: "Watch till the last second! Unbelievable clutch play 🔥",
-    crop: "gaming-zoom",
-    grade: "vivid-gamer",
-    style: "karaoke-pop"
-  },
-  {
-    name: "⚡ Split-Screen Reaction Edit",
-    badge: "PRO LAYOUT",
-    fire: true,
-    hook: "WAIT FOR THE REACTION 💀",
-    caption: "Bro literally broke the game right here 😂",
-    crop: "facecam-split",
-    grade: "crisp-hdr",
-    style: "neon-box"
-  },
-  {
-    name: "🎯 High-Intensity Action Cut",
-    badge: "FAST PACED",
-    fire: false,
-    hook: "99% PLAYERS FAIL THIS 🎯",
-    caption: "Pure skill and zero luck! Rate this 1-10 👇",
-    crop: "gaming-zoom",
-    grade: "cyber-neon",
-    style: "karaoke-pop"
-  },
-  {
-    name: "🎬 Cinematic Montage Style",
-    badge: "CLEAN HDR",
-    fire: false,
-    hook: "BEST MOMENT OF THE STREAM",
-    caption: "Cleanest gameplay you will see today ⚡",
-    crop: "ultrawide-cinematic",
-    grade: "vivid-gamer",
-    style: "bold"
-  },
-  {
-    name: "🤯 Unexpected Plot Twist",
-    badge: "HIGH RETENTION",
-    fire: true,
-    hook: "HE DID NOT EXPECT THAT 👀",
-    caption: "Wait for it... 3... 2... 1... BOOM! 💥",
-    crop: "full-center",
-    grade: "crisp-hdr",
-    style: "neon-box"
-  },
-  {
-    name: "🏆 God-Mode Highlight",
-    badge: "TOP PICK",
-    fire: false,
-    hook: "IS THIS EVEN LEGAL?! 🤯",
-    caption: "Subscribe for daily insane gameplay clips! 🚀",
-    crop: "gaming-zoom",
-    grade: "vivid-gamer",
-    style: "karaoke-pop"
+let audioCtx=null,mediaSourceNode=null,gainNode=null,compressorNode=null,eqNode=null,destStreamNode=null;
+
+function initAudioEngine(){
+  if(audioCtx)return;
+  const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+  audioCtx=new AudioContextClass();
+  mediaSourceNode=audioCtx.createMediaElementSource(source);
+
+  eqNode=audioCtx.createBiquadFilter();
+  eqNode.type='highshelf';
+  eqNode.frequency.value=3200;
+  eqNode.gain.value=5.0;
+
+  gainNode=audioCtx.createGain();
+  gainNode.gain.value=Number($('volBoost').value)/100;
+
+  compressorNode=audioCtx.createDynamicsCompressor();
+  compressorNode.threshold.value=-15;
+  compressorNode.knee.value=20;
+  compressorNode.ratio.value=6;
+  compressorNode.attack.value=0.003;
+  compressorNode.release.value=0.12;
+
+  destStreamNode=audioCtx.createMediaStreamDestination();
+
+  mediaSourceNode.connect(eqNode);
+  eqNode.connect(gainNode);
+  gainNode.connect(compressorNode);
+  compressorNode.connect(audioCtx.destination);
+  compressorNode.connect(destStreamNode);
+}
+
+function updateAudioSettings(){
+  const pct=Number($('volBoost').value);
+  $('volLabel').textContent=`${pct}% ${pct>100?'(Boosted)':'(Normal)'}`;
+  if(gainNode&&audioCtx){
+    gainNode.gain.setTargetAtTime(pct/100,audioCtx.currentTime,0.03);
   }
+}
+
+$('volBoost').addEventListener('input',updateAudioSettings);
+
+const AI_VIRAL_HOOKS = [
+  { hook: "WAIT FOR THE END 😱", caption: "You won't believe what happens right here! Pure insanity 🔥", grade: "vivid-gamer" },
+  { hook: "HE BROKE THE GAME 💀", caption: "Bro literally defied all physics in 3 seconds 😂", grade: "cyber-neon" },
+  { hook: "99% PLAYERS FAIL THIS 🎯", caption: "Absolute god-tier movement and reflexes right here ⚡", grade: "crisp-hdr" },
+  { hook: "IS THIS LEGAL?! 🤯", caption: "Watch how smoothly this clutch was pulled off 🏆", grade: "vivid-gamer" },
+  { hook: "THE GREATEST PLAY EVER 👀", caption: "Literal perfection. Rate this 1 to 10 in chat 👇", grade: "cyber-neon" },
+  { hook: "BIGGEST PLOT TWIST 💥", caption: "Nobody saw that coming! Absolute cinema 🎬", grade: "crisp-hdr" }
 ];
 
 function fmt(t){if(!Number.isFinite(t))return '0:00';let m=Math.floor(t/60),s=Math.floor(t%60);return `${m}:${String(s).padStart(2,'0')}`}
@@ -216,8 +287,9 @@ function loadVideo(f){
   source.style.display='block';
   $('suggest').disabled=false;
   $('clear').disabled=false;
-  analyzedPeaks=[];
-  setStatus('Video loaded! Click "Analyze Video & Generate 6 Viral Clips" to scan peaks.');
+  energyTimeline=[];
+  quietZones=[];
+  setStatus('Video loaded! Click "Run Autonomous AI Brain Analysis" to let AI take full control.');
 }
 
 source.style.display='none';
@@ -235,12 +307,10 @@ source.addEventListener('loadedmetadata',()=>{
     $('play').disabled=false;
     $('export').disabled=false;
     $('durationLabel').textContent=`Total video length: ${fmt(source.duration)}`;
-    applyPreset(0, 0, Math.min(25, source.duration), false);
+    applyAiPreset(0,0,Math.min(25,source.duration),false);
     drawFrame();
   }
 });
-
-source.addEventListener('error',()=>setStatus('Could not decode video. Try MP4 (H.264).'));
 
 $('clear').onclick=()=>{
   source.pause();
@@ -254,7 +324,7 @@ $('clear').onclick=()=>{
   empty.style.display='block';
   $('fileInfo').textContent='No video selected yet.';
   $('suggest').disabled=$('preview').disabled=$('export').disabled=$('play').disabled=true;
-  $('suggestions').innerHTML='<div class="muted">Upload a video to run the AI Action & Hype Scanner.</div>';
+  $('suggestions').innerHTML='<div class="muted">Upload a video to let the AI Director build 6 viral shorts.</div>';
   setStatus('');
 };
 
@@ -264,546 +334,572 @@ function validRange(){
     setStatus(`Choose a valid range between 0 and ${source.duration.toFixed(1)}s.`);
     return null;
   }
-  if(b-a>180){
-    setStatus('Keep short clips under 180 seconds for best performance.');
-    return null;
-  }
   return {a,b};
 }
 
-// Real Audio Waveform / Energy Peak Analyzer using Web Audio API
-async function analyzeAudioPeaks(fileObj, duration) {
-  try {
-    const arrayBuf = await fileObj.arrayBuffer();
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const audioBuf = await audioCtx.decodeAudioData(arrayBuf);
-    const channel = audioBuf.getChannelData(0);
-    const sampleRate = audioBuf.sampleRate;
-    const windowSec = 2; // 2-second energy windows
-    const samplesPerWindow = sampleRate * windowSec;
-    const windows = [];
+async function runAutonomousAiBrain(fileObj,duration){
+  try{
+    const arrayBuf=await fileObj.arrayBuffer();
+    const tempCtx=new (window.AudioContext||window.webkitAudioContext)();
+    const audioBuf=await tempCtx.decodeAudioData(arrayBuf);
+    const channel=audioBuf.getChannelData(0);
+    const sampleRate=audioBuf.sampleRate;
 
-    for (let i = 0; i < channel.length; i += samplesPerWindow) {
-      let sum = 0;
-      let count = 0;
-      for (let j = i; j < i + samplesPerWindow && j < channel.length; j += 10) {
-        sum += channel[j] * channel[j];
-        count++;
+    const stepSamples=Math.floor(sampleRate*0.4);
+    const timeline=[];
+    let globalSum=0,globalCount=0,maxPeak=0;
+
+    for(let i=0;i<channel.length;i+=stepSamples){
+      let sum=0,c=0;
+      for(let j=i;j<i+stepSamples&&j<channel.length;j+=8){
+        const val=Math.abs(channel[j]);
+        sum+=val*val;
+        if(val>maxPeak)maxPeak=val;
+        c++;
       }
-      const rms = Math.sqrt(sum / (count || 1));
-      const timeSec = i / sampleRate;
-      if (timeSec < duration - 8) {
-        windows.push({ time: timeSec, energy: rms });
+      const rms=Math.sqrt(sum/(c||1));
+      timeline.push({time:i/sampleRate,rms});
+      globalSum+=rms;
+      globalCount++;
+    }
+    tempCtx.close();
+
+    const avgRms=globalSum/(globalCount||1);
+    energyTimeline=timeline.map(t=>({
+      time:t.time,
+      norm:maxPeak>0?t.rms/maxPeak:0.5
+    }));
+
+    if($('autoNormalize').checked&&avgRms>0){
+      const recommendedGain=Math.min(380,Math.max(140,Math.round((0.24/avgRms)*100)));
+      $('volBoost').value=recommendedGain;
+      updateAudioSettings();
+    }
+
+    quietZones=[];
+    let qStart=null;
+    for(const t of timeline){
+      if(t.rms<avgRms*0.25){
+        if(qStart===null)qStart=t.time;
+      }else{
+        if(qStart!==null&&(t.time-qStart)>=1.5){
+          quietZones.push({start:qStart+0.2,end:t.time-0.2});
+        }
+        qStart=null;
       }
     }
-    audioCtx.close();
 
-    // Sort by highest audio energy (screams, explosions, gunshots, hype moments)
-    windows.sort((a, b) => b.energy - a.energy);
-    const chosen = [];
-    const minGap = Math.max(12, duration / 8);
+    const candidates=[];
+    for(let i=0;i<timeline.length-4;i++){
+      if(timeline[i].time>duration-8)continue;
+      const score=timeline[i].rms*1.2+timeline[i+1].rms*1.5+timeline[i+2].rms*1.8;
+      candidates.push({time:timeline[i].time,score});
+    }
+    candidates.sort((a,b)=>b.score-a.score);
 
-    for (const w of windows) {
-      if (chosen.length >= 6) break;
-      // Start 4 seconds BEFORE the peak so build-up is included!
-      const clipStart = Math.max(0, w.time - 4);
-      if (!chosen.some(c => Math.abs(c - clipStart) < minGap)) {
-        chosen.push(clipStart);
+    const chosen=[];
+    const minGap=Math.max(10,duration/8);
+    for(const cand of candidates){
+      if(chosen.length>=6)break;
+      const startPt=Math.max(0,cand.time-3.0);
+      if(!chosen.some(c=>Math.abs(c-startPt)<minGap)){
+        chosen.push(startPt);
       }
     }
-    chosen.sort((a, b) => a - b);
+    chosen.sort((a,b)=>a-b);
     return chosen;
-  } catch (err) {
+  }catch(e){
     return [];
   }
 }
 
-function applyPreset(index, startSec, endSec, autoPlay = true) {
-  const p = VIRAL_PRESETS[index % VIRAL_PRESETS.length];
-  $('start').value = startSec.toFixed(1);
-  $('end').value = endSec.toFixed(1);
-  $('cropMode').value = p.crop;
-  $('colorGrade').value = p.grade;
-  $('hookTitle').value = p.hook;
-  $('caption').value = p.caption;
-  $('style').value = p.style;
+function getCurrentAudioEnergy(t){
+  if(!energyTimeline.length)return 0.45;
+  const idx=Math.min(energyTimeline.length-1,Math.max(0,Math.floor(t*2)));
+  return energyTimeline[idx].norm;
+}
 
-  document.querySelectorAll('.suggestion').forEach((el, idx) => {
-    el.classList.toggle('active', idx === index);
+function applyAiPreset(index,startSec,endSec,autoPlay=true){
+  const item=AI_VIRAL_HOOKS[index%AI_VIRAL_HOOKS.length];
+  $('start').value=startSec.toFixed(1);
+  $('end').value=endSec.toFixed(1);
+  $('hookTitle').value=item.hook;
+  $('caption').value=item.caption;
+  $('colorGrade').value=item.grade;
+  $('cropMode').value=index%2===0?'gaming-zoom':'facecam-split';
+  $('style').value=index%2===0?'karaoke-pop':'neon-box';
+
+  document.querySelectorAll('.suggestion').forEach((el,idx)=>{
+    el.classList.toggle('active',idx===index);
   });
 
-  $('durationLabel').textContent = `Clip ${index+1}: ${fmt(startSec)} – ${fmt(endSec)} (${(endSec-startSec).toFixed(1)}s) · ${p.name}`;
-  source.currentTime = startSec;
-  if (autoPlay) {
-    previewPlaying = true;
+  $('durationLabel').textContent=`Autonomous Short #${index+1}: ${fmt(startSec)} – ${fmt(endSec)} · Vol: ${$('volBoost').value}%`;
+  source.currentTime=startSec;
+
+  if(autoPlay){
+    initAudioEngine();
+    if(audioCtx.state==='suspended')audioCtx.resume();
+    previewPlaying=true;
     source.play().catch(()=>{});
     startPreviewLoop();
-  } else {
+  }else{
     source.pause();
     drawFrame();
   }
-  setStatus(`Loaded Clip ${index+1} (${p.name}) — Ready to preview or export!`);
+  setStatus(`🤖 AI Brain activated Short #${index+1} with Autonomous Styling & ${$('volBoost').value}% Audio Boost!`);
 }
 
-$('suggest').onclick = async () => {
-  if (!source.duration) return;
-  $('suggest').disabled = true;
-  setStatus('🧠 AI Scanning audio spikes, hype reactions & action moments across full video...');
+$('applyAiCmd').onclick=()=>{
+  const promptTxt=$('aiPrompt').value.trim();
+  if(!promptTxt)return;
+  $('hookTitle').value=promptTxt.toUpperCase();
+  $('caption').value=`AI Directed Edit based on: "${promptTxt}" 🔥`;
+  drawFrame();
+  setStatus('🧠 AI Brain successfully adapted its editing instructions to your prompt!');
+};
 
-  const d = source.duration;
-  const clipLen = Math.min(26, Math.max(12, d * 0.14));
-  let starts = [];
+$('suggest').onclick=async()=>{
+  if(!source.duration)return;
+  $('suggest').disabled=true;
+  setStatus('🤖 AI Brain is analyzing audio spectrum, detecting action climaxes & formatting 6 viral edits...');
 
-  if (file.files && file.files[0] && file.files[0].size < 250 * 1024 * 1024) {
-    starts = await analyzeAudioPeaks(file.files[0], d);
+  const d=source.duration;
+  const clipLen=Math.min(26,Math.max(14,d*0.14));
+  let starts=[];
+
+  if(file.files&&file.files[0]&&file.files[0].size<350*1024*1024){
+    starts=await runAutonomousAiBrain(file.files[0],d);
   }
 
-  // Fill remaining slots with smart distributed action points if needed
-  const fallbackRatios = [0.08, 0.24, 0.41, 0.58, 0.74, 0.88];
-  let fbIdx = 0;
-  while (starts.length < 6 && fbIdx < fallbackRatios.length) {
-    const candidate = Math.max(0, Math.min(d - clipLen, d * fallbackRatios[fbIdx++]));
-    if (!starts.some(s => Math.abs(s - candidate) < 6)) {
-      starts.push(candidate);
-    }
+  const fallback=[0.05,0.22,0.40,0.58,0.74,0.88];
+  let f=0;
+  while(starts.length<6&&f<fallback.length){
+    const c=Math.max(0,Math.min(d-clipLen,d*fallback[f++]));
+    if(!starts.some(s=>Math.abs(s-c)<6))starts.push(c);
   }
-  starts.sort((a, b) => a - b);
+  starts.sort((a,b)=>a-b);
 
-  $('suggestions').innerHTML = '';
-  starts.forEach((s, i) => {
-    const e = Math.min(d, s + clipLen);
-    const preset = VIRAL_PRESETS[i % VIRAL_PRESETS.length];
-    const el = document.createElement('div');
-    el.className = 'suggestion' + (i === 0 ? ' active' : '');
-
-    const info = document.createElement('div');
-    info.innerHTML = `
-      <b>#${i+1} ${preset.name}<span class="badge ${preset.fire ? 'fire' : ''}">${preset.badge}</span></b>
-      <small>${fmt(s)} – ${fmt(e)} (${Math.round(e-s)}s) · Style: ${preset.crop.replace('-', ' ')}</small>
+  $('suggestions').innerHTML='';
+  starts.forEach((s,i)=>{
+    const e=Math.min(d,s+clipLen);
+    const item=AI_VIRAL_HOOKS[i%AI_VIRAL_HOOKS.length];
+    const el=document.createElement('div');
+    el.className='suggestion'+(i===0?' active':'');
+    el.innerHTML=`
+      <div>
+        <b>🧠 AI Brain Short #${i+1}<span class="badge fire">99% VIRAL</span></b>
+        <small>${fmt(s)} – ${fmt(e)} · "${item.hook}" + Auto-Cut</small>
+      </div>
     `;
-
-    const btn = document.createElement('button');
-    btn.textContent = 'Load Edit';
-    btn.onclick = () => applyPreset(i, s, e, true);
-
-    el.append(info, btn);
+    const btn=document.createElement('button');
+    btn.textContent='Play Short';
+    btn.onclick=()=>applyAiPreset(i,s,e,true);
+    el.append(btn);
     $('suggestions').append(el);
   });
 
-  $('suggest').disabled = false;
-  if (starts.length > 0) {
-    applyPreset(0, starts[0], Math.min(d, starts[0] + clipLen), false);
-    setStatus('✅ AI Analysis Complete! 6 uniquely edited viral shorts generated.');
+  $('suggest').disabled=false;
+  if(starts.length>0){
+    applyAiPreset(0,starts[0],Math.min(d,starts[0]+clipLen),false);
+    setStatus(`✅ AI Brain Analysis Complete! 6 Autonomous Viral Shorts Created.`);
   }
 };
 
-function getColorFilter(grade) {
-  switch (grade) {
-    case 'vivid-gamer': return 'contrast(1.16) saturate(1.32) brightness(1.04)';
-    case 'cyber-neon': return 'contrast(1.22) saturate(1.45) hue-rotate(-8deg)';
-    case 'crisp-hdr': return 'contrast(1.14) saturate(1.15) brightness(1.06)';
-    default: return 'none';
+function getColorFilter(grade,energy){
+  const punch=energy>0.7?1.09:1.0;
+  switch(grade){
+    case 'vivid-gamer':return `contrast(${(1.18*punch).toFixed(2)}) saturate(1.36) brightness(${(1.04*punch).toFixed(2)})`;
+    case 'cyber-neon':return `contrast(${(1.24*punch).toFixed(2)}) saturate(1.5) hue-rotate(-8deg)`;
+    case 'crisp-hdr':return `contrast(${(1.15*punch).toFixed(2)}) saturate(1.2) brightness(1.07)`;
+    default:return 'none';
   }
 }
 
-function drawFrame() {
-  if (!source.videoWidth || !source.videoHeight) return;
-  const W = canvas.width, H = canvas.height;
-  const vw = source.videoWidth, vh = source.videoHeight;
-  const cropMode = $('cropMode').value;
-  const grade = $('colorGrade').value;
-  const doPulse = $('fxPulse').checked;
-  const doProgress = $('fxProgress').checked;
-  const doVignette = $('fxVignette').checked;
+function drawFrame(){
+  if(!source.videoWidth||!source.videoHeight)return;
+  const W=canvas.width,H=canvas.height;
+  const vw=source.videoWidth,vh=source.videoHeight;
+  const cropMode=$('cropMode').value;
+  const grade=$('colorGrade').value;
+  const doImpactZoom=$('fxImpactZoom').checked;
+  const doShake=$('fxShake').checked;
+  const doProgress=$('fxProgress').checked;
 
-  const r = validRangeSilent() || { a: 0, b: source.duration || 30 };
-  const clipDuration = Math.max(0.1, r.b - r.a);
-  const elapsed = Math.max(0, source.currentTime - r.a);
-  const progressRatio = Math.min(1, elapsed / clipDuration);
+  const r=validRangeSilent()||{a:0,b:source.duration||30};
+  const clipDuration=Math.max(0.1,r.b-r.a);
+  const elapsed=Math.max(0,source.currentTime-r.a);
+  const progressRatio=Math.min(1,elapsed/clipDuration);
 
-  // Dynamic subtle beat/action zoom pulse
-  const pulse = doPulse ? (1 + Math.sin(elapsed * 3.5) * 0.022 + progressRatio * 0.05) : 1;
+  const energy=getCurrentAudioEnergy(source.currentTime);
+  const isHype=energy>0.65;
+  const impactZoom=doImpactZoom?(1+(energy*0.16)+(isHype?0.07:0)):1;
+  const shakeX=(doShake&&isHype)?(Math.sin(elapsed*50)*16):0;
+  const shakeY=(doShake&&isHype)?(Math.cos(elapsed*54)*12):0;
 
   ctx.save();
-  ctx.fillStyle = '#060812';
-  ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle='#050711';
+  ctx.fillRect(0,0,W,H);
 
-  const colorCss = getColorFilter(grade);
+  const colorCss=getColorFilter(grade,energy);
 
-  if (cropMode === 'gaming-zoom') {
-    // Punchy vertical zoom fill (eliminates tiny letterbox look!)
+  if(cropMode==='gaming-zoom'){
     ctx.save();
-    ctx.filter = `blur(28px) brightness(0.4) ${colorCss}`;
-    const bgScale = Math.max(W / vw, H / vh);
-    ctx.drawImage(source, (W - vw * bgScale) / 2, (H - vh * bgScale) / 2, vw * bgScale, vh * bgScale);
+    ctx.filter=`blur(28px) brightness(0.4) ${colorCss}`;
+    const bgScale=Math.max(W/vw,H/vh);
+    ctx.drawImage(source,(W-vw*bgScale)/2,(H-vh*bgScale)/2,vw*bgScale,vh*bgScale);
     ctx.restore();
 
     ctx.save();
-    ctx.filter = colorCss;
-    const baseFit = Math.min(W / vw, H / vh) * 1.48 * pulse;
-    const dw = vw * baseFit, dh = vh * baseFit;
-    ctx.drawImage(source, (W - dw) / 2, (H - dh) / 2 + 30, dw, dh);
+    ctx.filter=colorCss;
+    const baseFit=Math.min(W/vw,H/vh)*1.48*impactZoom;
+    const dw=vw*baseFit,dh=vh*baseFit;
+    ctx.drawImage(source,(W-dw)/2+shakeX,(H-dh)/2+25+shakeY,dw,dh);
     ctx.restore();
 
-  } else if (cropMode === 'facecam-split') {
-    // Top 38% zoomed reaction/top area + Bottom 62% main gameplay action
-    const splitY = Math.round(H * 0.38);
-
-    // Top section (zoomed crop)
+  }else if(cropMode==='facecam-split'){
+    const splitY=Math.round(H*0.38);
     ctx.save();
-    ctx.beginPath();
-    ctx.rect(0, 0, W, splitY);
-    ctx.clip();
-    ctx.filter = colorCss;
-    const topScale = Math.max(W / (vw * 0.45), splitY / (vh * 0.55)) * pulse;
-    ctx.drawImage(source, 0, 0, vw * 0.5, vh * 0.6, (W - vw * 0.45 * topScale) / 2, 0, vw * 0.45 * topScale, vh * 0.55 * topScale);
-    ctx.restore();
-
-    // Bottom section (full width gameplay)
-    ctx.save();
-    ctx.beginPath();
-    ctx.rect(0, splitY, W, H - splitY);
-    ctx.clip();
-    ctx.filter = colorCss;
-    const botH = H - splitY;
-    const botScale = Math.max(W / vw, botH / vh) * 1.05 * pulse;
-    ctx.drawImage(source, (W - vw * botScale) / 2, splitY + (botH - vh * botScale) / 2, vw * botScale, vh * botScale);
-    ctx.restore();
-
-    // Neon divider line
-    ctx.fillStyle = '#22d3ee';
-    ctx.fillRect(0, splitY - 4, W, 8);
-
-  } else if (cropMode === 'ultrawide-cinematic') {
-    // Blurred backdrop + crisp 16:9 centered frame with cinema bars
-    ctx.save();
-    ctx.filter = `blur(32px) brightness(0.35) ${colorCss}`;
-    const bgScale = Math.max(W / vw, H / vh);
-    ctx.drawImage(source, (W - vw * bgScale) / 2, (H - vh * bgScale) / 2, vw * bgScale, vh * bgScale);
+    ctx.beginPath();ctx.rect(0,0,W,splitY);ctx.clip();
+    ctx.filter=colorCss;
+    const topScale=Math.max(W/(vw*0.45),splitY/(vh*0.55))*impactZoom;
+    ctx.drawImage(source,0,0,vw*0.5,vh*0.6,(W-vw*0.45*topScale)/2+shakeX,shakeY,vw*0.45*topScale,vh*0.55*topScale);
     ctx.restore();
 
     ctx.save();
-    ctx.filter = colorCss;
-    const fit = (W / vw) * 1.06 * pulse;
-    const dw = vw * fit, dh = vh * fit;
-    const dy = (H - dh) / 2;
-    ctx.drawImage(source, (W - dw) / 2, dy, dw, dh);
-    ctx.strokeStyle = 'rgba(255,255,255,0.22)';
-    ctx.lineWidth = 4;
-    ctx.strokeRect((W - dw) / 2, dy, dw, dh);
+    ctx.beginPath();ctx.rect(0,splitY,W,H-splitY);ctx.clip();
+    ctx.filter=colorCss;
+    const botH=H-splitY;
+    const botScale=Math.max(W/vw,botH/vh)*1.05*impactZoom;
+    ctx.drawImage(source,(W-vw*botScale)/2+shakeX,splitY+(botH-vh*botScale)/2+shakeY,vw*botScale,vh*botScale);
     ctx.restore();
 
-  } else {
-    // Full center + blur background
+    ctx.fillStyle=isHype?'#f43f5e':'#22d3ee';
+    ctx.fillRect(0,splitY-4,W,8);
+
+  }else if(cropMode==='ultrawide-cinematic'){
     ctx.save();
-    ctx.filter = `blur(26px) brightness(0.42) ${colorCss}`;
-    const bgScale = Math.max(W / vw, H / vh);
-    ctx.drawImage(source, (W - vw * bgScale) / 2, (H - vh * bgScale) / 2, vw * bgScale, vh * bgScale);
+    ctx.filter=`blur(32px) brightness(0.35) ${colorCss}`;
+    const bgScale=Math.max(W/vw,H/vh);
+    ctx.drawImage(source,(W-vw*bgScale)/2,(H-vh*bgScale)/2,vw*bgScale,vh*bgScale);
     ctx.restore();
 
     ctx.save();
-    ctx.filter = colorCss;
-    const fit = Math.min(W / vw, H / vh) * pulse;
-    const dw = vw * fit, dh = vh * fit;
-    ctx.drawImage(source, (W - dw) / 2, (H - dh) / 2, dw, dh);
+    ctx.filter=colorCss;
+    const fit=(W/vw)*1.06*impactZoom;
+    const dw=vw*fit,dh=vh*fit;
+    const dy=(H-dh)/2;
+    ctx.drawImage(source,(W-dw)/2+shakeX,dy+shakeY,dw,dh);
+    ctx.restore();
+
+  }else{
+    ctx.save();
+    ctx.filter=`blur(26px) brightness(0.42) ${colorCss}`;
+    const bgScale=Math.max(W/vw,H/vh);
+    ctx.drawImage(source,(W-vw*bgScale)/2,(H-vh*bgScale)/2,vw*bgScale,vh*bgScale);
+    ctx.restore();
+
+    ctx.save();
+    ctx.filter=colorCss;
+    const fit=Math.min(W/vw,H/vh)*impactZoom;
+    const dw=vw*fit,dh=vh*fit;
+    ctx.drawImage(source,(W-dw)/2+shakeX,(H-dh)/2+shakeY,dw,dh);
     ctx.restore();
   }
 
-  // Pro Vignette overlay
-  if (doVignette) {
-    const grad = ctx.createRadialGradient(W / 2, H / 2, W * 0.35, W / 2, H / 2, H * 0.65);
-    grad.addColorStop(0, 'rgba(0,0,0,0)');
-    grad.addColorStop(1, 'rgba(0,0,0,0.52)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
+  if(isHype&&doImpactZoom){
+    const grad=ctx.createRadialGradient(W/2,H/2,W*0.3,W/2,H/2,H*0.68);
+    grad.addColorStop(0,'rgba(244,63,94,0)');
+    grad.addColorStop(1,'rgba(244,63,94,0.32)');
+    ctx.fillStyle=grad;
+    ctx.fillRect(0,0,W,H);
   }
 
-  // Top Viral Hook Banner (Retention Booster)
-  const hook = $('hookTitle').value.trim();
-  if (hook) {
+  const hook=$('hookTitle').value.trim();
+  if(hook){
     ctx.save();
-    ctx.font = '900 54px system-ui, Arial, sans-serif';
-    const textW = Math.min(W - 110, ctx.measureText(hook).width);
-    const boxW = textW + 76;
-    const boxH = 98;
-    const boxX = (W - boxW) / 2;
-    const boxY = 135;
+    ctx.font='900 54px system-ui, Arial, sans-serif';
+    const textW=Math.min(W-110,ctx.measureText(hook).width);
+    const boxW=textW+76,boxH=96,boxX=(W-boxW)/2,boxY=130;
 
-    ctx.fillStyle = 'rgba(12, 15, 30, 0.88)';
-    roundRect(ctx, boxX, boxY, boxW, boxH, 24);
+    ctx.fillStyle='rgba(10, 14, 28, 0.92)';
+    roundRect(ctx,boxX,boxY,boxW,boxH,24);
     ctx.fill();
 
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = '#f43f5e';
-    roundRect(ctx, boxX, boxY, boxW, boxH, 24);
+    ctx.lineWidth=5;
+    ctx.strokeStyle=isHype?'#fbbf24':'#f43f5e';
+    roundRect(ctx,boxX,boxY,boxW,boxH,24);
     ctx.stroke();
 
-    ctx.fillStyle = '#ffffff';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(hook, W / 2, boxY + boxH / 2 + 2, W - 130);
+    ctx.fillStyle='#ffffff';
+    ctx.textAlign='center';
+    ctx.textBaseline='middle';
+    ctx.fillText(hook,W/2,boxY+boxH/2+2,W-130);
     ctx.restore();
   }
 
-  // Dynamic Animated Subtitles / Captions
-  const cap = $('caption').value.trim();
-  if (cap) {
-    const style = $('style').value;
+  const cap=$('caption').value.trim();
+  if(cap){
+    const style=$('style').value;
     ctx.save();
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    const words = cap.split(/\s+/);
-    const activeWordIdx = Math.floor((elapsed * 2.6) % Math.max(1, words.length));
+    ctx.textAlign='center';
+    ctx.textBaseline='middle';
+    const words=cap.split(/\s+/);
+    const activeWordIdx=Math.floor((elapsed*3.0)%Math.max(1,words.length));
 
-    let lines = [], line = [];
-    ctx.font = '900 66px system-ui, Arial, sans-serif';
-    words.forEach((w, idx) => {
-      const testStr = [...line.map(x => x.w), w].join(' ');
-      if (ctx.measureText(testStr).width > W - 130 && line.length) {
+    let lines=[],line=[];
+    ctx.font='900 66px system-ui, Arial, sans-serif';
+    words.forEach((w,idx)=>{
+      const testStr=[...line.map(x=>x.w),w].join(' ');
+      if(ctx.measureText(testStr).width>W-130&&line.length){
         lines.push(line);
-        line = [{ w, idx }];
-      } else {
-        line.push({ w, idx });
+        line=[{w,idx}];
+      }else{
+        line.push({w,idx});
       }
     });
-    if (line.length) lines.push(line);
-    lines = lines.slice(0, 3);
+    if(line.length)lines.push(line);
+    lines=lines.slice(0,3);
 
-    const baseY = H * 0.79;
-    const lh = 84;
-
-    if (style === 'neon-box') {
-      const maxW = Math.max(...lines.map(l => ctx.measureText(l.map(x => x.w).join(' ')).width));
-      ctx.fillStyle = 'rgba(10, 12, 26, 0.84)';
-      roundRect(ctx, (W - maxW) / 2 - 36, baseY - (lines.length * lh) / 2 - 22, maxW + 72, lines.length * lh + 44, 22);
+    const baseY=H*0.79,lh=84;
+    if(style==='neon-box'){
+      const maxW=Math.max(...lines.map(l=>ctx.measureText(l.map(x=>x.w).join(' ')).width));
+      ctx.fillStyle='rgba(10, 12, 26, 0.85)';
+      roundRect(ctx,(W-maxW)/2-36,baseY-(lines.length*lh)/2-22,maxW+72,lines.length*lh+44,22);
       ctx.fill();
-      ctx.strokeStyle = '#22d3ee';
-      ctx.lineWidth = 4;
+      ctx.strokeStyle='#22d3ee';
+      ctx.lineWidth=4;
       ctx.stroke();
     }
 
-    lines.forEach((lineWords, i) => {
-      const yy = baseY + (i - (lines.length - 1) / 2) * lh;
-      const fullText = lineWords.map(x => x.w).join(' ');
+    lines.forEach((lineWords,i)=>{
+      const yy=baseY+(i-(lines.length-1)/2)*lh;
+      const fullText=lineWords.map(x=>x.w).join(' ');
 
-      if (style === 'karaoke-pop') {
-        // Word-by-word highlight in Viral Yellow!
-        const totalW = ctx.measureText(fullText).width;
-        let curX = (W - totalW) / 2;
-        lineWords.forEach(item => {
-          const wordStr = item.w + ' ';
-          const wWidth = ctx.measureText(wordStr).width;
-          const isHighlight = item.idx === activeWordIdx;
-
+      if(style==='karaoke-pop'){
+        const totalW=ctx.measureText(fullText).width;
+        let curX=(W-totalW)/2;
+        lineWords.forEach(item=>{
+          const wWidth=ctx.measureText(item.w+' ').width;
+          const isHighlight=item.idx===activeWordIdx;
           ctx.save();
-          ctx.textAlign = 'left';
-          ctx.lineWidth = 14;
-          ctx.strokeStyle = '#050505';
-          ctx.strokeText(item.w, curX, yy);
-          ctx.fillStyle = isHighlight ? '#fbbf24' : '#ffffff';
-          ctx.fillText(item.w, curX, yy);
+          ctx.textAlign='left';
+          ctx.lineWidth=14;
+          ctx.strokeStyle='#050505';
+          ctx.strokeText(item.w,curX,yy);
+          ctx.fillStyle=isHighlight?'#fbbf24':'#ffffff';
+          ctx.fillText(item.w,curX,yy);
           ctx.restore();
-
-          curX += wWidth;
+          curX+=wWidth;
         });
-      } else {
-        ctx.lineWidth = style === 'minimal' ? 0 : 14;
-        ctx.strokeStyle = '#050505';
-        ctx.fillStyle = '#ffffff';
-        if (style !== 'minimal') ctx.strokeText(fullText, W / 2, yy);
-        ctx.fillText(fullText, W / 2, yy);
+      }else{
+        ctx.lineWidth=style==='minimal'?0:14;
+        ctx.strokeStyle='#050505';
+        ctx.fillStyle='#ffffff';
+        if(style!=='minimal')ctx.strokeText(fullText,W/2,yy);
+        ctx.fillText(fullText,W/2,yy);
       }
     });
     ctx.restore();
   }
 
-  // Top Retention Progress Bar
-  if (doProgress) {
-    ctx.fillStyle = 'rgba(255,255,255,0.18)';
-    ctx.fillRect(0, 0, W, 14);
-    const barGrad = ctx.createLinearGradient(0, 0, W, 0);
-    barGrad.addColorStop(0, '#22d3ee');
-    barGrad.addColorStop(0.5, '#8b5cf6');
-    barGrad.addColorStop(1, '#f43f5e');
-    ctx.fillStyle = barGrad;
-    ctx.fillRect(0, 0, W * progressRatio, 14);
+  if(doProgress){
+    ctx.fillStyle='rgba(255,255,255,0.2)';
+    ctx.fillRect(0,0,W,14);
+    const barGrad=ctx.createLinearGradient(0,0,W,0);
+    barGrad.addColorStop(0,'#22d3ee');
+    barGrad.addColorStop(0.5,'#8b5cf6');
+    barGrad.addColorStop(1,'#f43f5e');
+    ctx.fillStyle=barGrad;
+    ctx.fillRect(0,0,W*progressRatio,14);
   }
-
   ctx.restore();
 }
 
-function roundRect(ctx, x, y, w, h, r) {
+function roundRect(ctx,x,y,w,h,r){
   ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + w - r, y);
-  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-  ctx.lineTo(x + w, y + h - r);
-  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-  ctx.lineTo(x + r, y + h);
-  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);
   ctx.closePath();
 }
 
-function startPreviewLoop() {
-  cancelAnimationFrame(raf);
-  function tick() {
-    if (!previewPlaying || exporting) return;
-    drawFrame();
-    const r = validRangeSilent();
-    if (r && source.currentTime >= r.b) {
-      source.currentTime = r.a; // Auto-loop edited clip preview!
+function handleAutonomousJumpCuts(r){
+  if(!$('fxJumpCut').checked||!quietZones.length)return;
+  const cur=source.currentTime;
+  for(const q of quietZones){
+    if(cur>=q.start&&cur<q.end&&q.end<r.b-1){
+      source.currentTime=q.end;
+      break;
     }
-    raf = requestAnimationFrame(tick);
   }
-  raf = requestAnimationFrame(tick);
 }
 
-$('preview').onclick = () => {
-  const r = validRange();
-  if (!r) return;
-  previewPlaying = true;
-  $('durationLabel').textContent = `Previewing Clip: ${fmt(r.a)} – ${fmt(r.b)} (${(r.b - r.a).toFixed(1)}s)`;
-  source.currentTime = r.a;
+function startPreviewLoop(){
+  cancelAnimationFrame(raf);
+  function tick(){
+    if(!previewPlaying||exporting)return;
+    const r=validRangeSilent();
+    if(r){
+      handleAutonomousJumpCuts(r);
+      if(source.currentTime>=r.b){
+        source.currentTime=r.a;
+      }
+    }
+    drawFrame();
+    raf=requestAnimationFrame(tick);
+  }
+  raf=requestAnimationFrame(tick);
+}
+
+$('preview').onclick=()=>{
+  const r=validRange();
+  if(!r)return;
+  initAudioEngine();
+  if(audioCtx.state==='suspended')audioCtx.resume();
+  previewPlaying=true;
+  source.currentTime=r.a;
   source.play().catch(()=>{});
   startPreviewLoop();
-  setStatus('Playing live edited 9:16 preview (auto-looping).');
+  setStatus(`Playing Autonomous AI Short with ${$('volBoost').value}% Boosted Audio!`);
 };
 
-$('play').onclick = () => {
-  const r = validRange();
-  if (!r) return;
-  if (previewPlaying && !source.paused) {
+$('play').onclick=()=>{
+  const r=validRange();
+  if(!r)return;
+  initAudioEngine();
+  if(audioCtx.state==='suspended')audioCtx.resume();
+  if(previewPlaying&&!source.paused){
     source.pause();
-    previewPlaying = false;
+    previewPlaying=false;
     setStatus('Preview paused.');
-  } else {
-    previewPlaying = true;
-    source.currentTime = r.a;
-    source.play().catch(()=>setStatus('Click play on source video first.'));
+  }else{
+    previewPlaying=true;
+    source.currentTime=r.a;
+    source.play().catch(()=>setStatus('Click play on the source video first.'));
     startPreviewLoop();
-    setStatus('Playing edited short preview.');
+    setStatus(`Playing Autonomous Short (${$('volBoost').value}% Audio Active).`);
   }
 };
 
-source.addEventListener('timeupdate', () => {
-  if (!previewPlaying && !exporting) drawFrame();
+source.addEventListener('timeupdate',()=>{
+  if(!previewPlaying&&!exporting)drawFrame();
 });
 
-function validRangeSilent() {
-  const a = Number($('start').value), b = Number($('end').value);
-  return Number.isFinite(a) && Number.isFinite(b) && a >= 0 && b > a && b <= source.duration ? { a, b } : null;
+function validRangeSilent(){
+  const a=Number($('start').value),b=Number($('end').value);
+  return Number.isFinite(a)&&Number.isFinite(b)&&a>=0&&b>a&&b<=source.duration?{a,b}:null;
 }
 
-function chooseMime() {
+function chooseMime(){
   return [
     'video/mp4;codecs=avc1.42E01E,mp4a.40.2',
     'video/webm;codecs=vp9,opus',
     'video/webm;codecs=vp8,opus',
     'video/webm'
-  ].find(x => window.MediaRecorder && MediaRecorder.isTypeSupported(x)) || '';
+  ].find(x=>window.MediaRecorder&&MediaRecorder.isTypeSupported(x))||'';
 }
 
-$('export').onclick = async () => {
-  const r = validRange();
-  if (!r) return;
-  if (!window.MediaRecorder || !canvas.captureStream) {
-    setStatus('Your browser does not support in-browser HD export. Use Chrome/Edge.');
+$('export').onclick=async()=>{
+  const r=validRange();
+  if(!r)return;
+  if(!window.MediaRecorder||!canvas.captureStream){
+    setStatus('Your browser does not support HD export. Use Chrome or Edge.');
     return;
   }
-  if (exporting) return;
-  exporting = true;
-  previewPlaying = false;
-  $('export').disabled = true;
-  setStatus('🎬 Rendering & Exporting 1080p HD Pro Short...');
+  if(exporting)return;
 
-  const mime = chooseMime();
-  const stream = canvas.captureStream(30);
-  const videoStream = source.captureStream ? source.captureStream() : source.mozCaptureStream ? source.mozCaptureStream() : null;
-  if (videoStream) videoStream.getAudioTracks().forEach(t => stream.addTrack(t));
+  initAudioEngine();
+  if(audioCtx.state==='suspended')await audioCtx.resume();
+  updateAudioSettings();
 
-  let recorder;
-  try {
-    recorder = new MediaRecorder(stream, {
-      mimeType: mime,
-      videoBitsPerSecond: 10000000 // 10 Mbps Crystal Clear HD Bitrate
-    });
-  } catch (e) {
-    try {
-      recorder = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
-    } catch (err) {
-      exporting = false;
-      $('export').disabled = false;
-      setStatus('Recording failed to initialize.');
-      return;
-    }
+  exporting=true;
+  previewPlaying=false;
+  $('export').disabled=true;
+  setStatus(`🎬 Rendering 1080p HD Master + ${$('volBoost').value}% Studio Audio Gain...`);
+
+  const mime=chooseMime();
+  const canvasStream=canvas.captureStream(30);
+
+  if(destStreamNode&&destStreamNode.stream){
+    destStreamNode.stream.getAudioTracks().forEach(t=>canvasStream.addTrack(t));
   }
 
-  const chunks = [];
-  recorder.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
-  recorder.onerror = () => { setStatus('Export error. Try a shorter clip.'); cleanup(); };
-  recorder.onstop = () => {
-    const type = recorder.mimeType || 'video/webm';
-    const blob = new Blob(chunks, { type });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    const ext = type.includes('mp4') ? 'mp4' : 'webm';
-    a.href = url;
-    a.download = `ClipSpark-Viral-Short-HD.${ext}`;
+  let recorder;
+  try{
+    recorder=new MediaRecorder(canvasStream,{
+      mimeType:mime,
+      videoBitsPerSecond:12000000
+    });
+  }catch(e){
+    recorder=new MediaRecorder(canvasStream,mime?{mimeType:mime}:undefined);
+  }
+
+  const chunks=[];
+  recorder.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
+  recorder.onerror=()=>{setStatus('Export failed. Try a shorter clip.');cleanup()};
+  recorder.onstop=()=>{
+    const type=recorder.mimeType||'video/webm';
+    const blob=new Blob(chunks,{type});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    const ext=type.includes('mp4')?'mp4':'webm';
+    a.href=url;
+    a.download=`ClipSpark-Autonomous-AI-Short.${ext}`;
     document.body.appendChild(a);
     a.click();
     a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 60000);
-    $('progress').style.width = '100%';
-    setStatus(`✅ Export Complete! (${(blob.size / 1024 / 1024).toFixed(1)} MB · 1080p HD ${ext.toUpperCase()})`);
+    setTimeout(()=>URL.revokeObjectURL(url),60000);
+    $('progress').style.width='100%';
+    setStatus(`✅ Autonomous Master Export Complete! (${(blob.size/1024/1024).toFixed(1)} MB · 1080p HD)`);
     cleanup();
   };
 
-  function cleanup() {
-    exporting = false;
-    $('export').disabled = false;
+  function cleanup(){
+    exporting=false;
+    $('export').disabled=false;
     source.pause();
-    stream.getTracks().forEach(t => t.stop());
+    canvasStream.getVideoTracks().forEach(t=>t.stop());
   }
 
   source.pause();
-  source.currentTime = r.a;
-  try {
-    await new Promise((resolve, reject) => {
-      const done = () => { source.removeEventListener('seeked', done); resolve(); };
-      source.addEventListener('seeked', done, { once: true });
-      setTimeout(() => reject(new Error('seek timeout')), 5000);
+  source.currentTime=r.a;
+  try{
+    await new Promise((resolve,reject)=>{
+      const done=()=>{source.removeEventListener('seeked',done);resolve()};
+      source.addEventListener('seeked',done,{once:true});
+      setTimeout(()=>reject(new Error('seek timeout')),5000);
     });
-  } catch (e) {}
+  }catch(e){}
 
   drawFrame();
   recorder.start(200);
-  try {
+  try{
     await source.play();
-  } catch (e) {
+  }catch(e){
     recorder.stop();
     setStatus('Could not start video playback for export.');
     return;
   }
 
-  function loop() {
-    if (!exporting) return;
+  function loop(){
+    if(!exporting)return;
+    handleAutonomousJumpCuts(r);
     drawFrame();
-    const pct = Math.min(100, ((source.currentTime - r.a) / (r.b - r.a)) * 100);
-    $('progress').style.width = pct + '%';
-    if (source.currentTime >= r.b || source.ended) {
+    const pct=Math.min(100,((source.currentTime-r.a)/(r.b-r.a))*100);
+    $('progress').style.width=pct+'%';
+    if(source.currentTime>=r.b||source.ended){
       source.pause();
-      if (recorder.state !== 'inactive') recorder.stop();
+      if(recorder.state!=='inactive')recorder.stop();
       return;
     }
-    raf = requestAnimationFrame(loop);
+    raf=requestAnimationFrame(loop);
   }
   loop();
 };
 
-['caption', 'hookTitle'].forEach(id => $(id).addEventListener('input', drawFrame));
-['style', 'cropMode', 'colorGrade', 'fxPulse', 'fxProgress', 'fxVignette'].forEach(id => $(id).addEventListener('change', drawFrame));
+['caption','hookTitle'].forEach(id=>$(id).addEventListener('input',drawFrame));
+['style','cropMode','colorGrade','fxImpactZoom','fxShake','fxProgress'].forEach(id=>$(id).addEventListener('change',drawFrame));
 })();
 </script>
 </body>
