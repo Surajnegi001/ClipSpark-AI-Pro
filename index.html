@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#070913">
-<title>ClipSpark AI Autonomous Director v4.0</title>
+<title>ClipSpark AI Autonomous Director v5.0</title>
 <style>
 :root{--bg:#070913;--panel:#101426;--panel2:#171d36;--text:#f5f6ff;--muted:#98a2c4;--line:#262f52;--accent:#8b5cf6;--cyan:#22d3ee;--good:#10b981;--fire:#f43f5e;--gold:#fbbf24}
 *{box-sizing:border-box}
@@ -70,24 +70,22 @@ label{display:block;font-size:12px;color:#cbd2ed;margin:10px 0 4px;font-weight:6
 </head>
 <body>
 <header>
-  <div><div class="brand">✦ ClipSpark <span>AI Autonomous Director</span></div><div class="tag">Self-Thinking Viral Editor · 1080p HD Studio Audio</div></div>
-  <div class="tag">PRO v4.0</div>
+  <div><div class="brand">✦ ClipSpark <span>Autonomous Director v5.0</span></div><div class="tag">True 20s Cut-to-Cut AI Edits · 1080p HD Studio Audio</div></div>
+  <div class="tag">PRO v5.0</div>
 </header>
-
 <main>
 <section class="hero">
-  <h1>Autonomous <span class="grad">AI Brain Video Editor</span></h1>
-  <p>The AI fully thinks on its own: it scans your entire video, auto-selects the 6 most viral hype climaxes, applies autonomous jump-cuts, boosts audio up to 400%, and crafts professional vertical shorts.</p>
+  <h1>Fully Autonomous <span class="grad">20-Second Pro Shorts</span></h1>
+  <p>The AI brain now autonomously extracts strict 20-second high-impact segments, cuts out all dead space, boosts audio up to 400%, and outputs a zero-effort viral short ready for upload.</p>
 </section>
-
 <div class="layout">
   <!-- COLUMN 1 -->
   <section class="card">
-    <h2>1. Drop Video & AI Audio Master</h2>
+    <h2>1. Drop Video & Neural Audio Boost</h2>
     <div class="drop" id="drop">
       <div style="font-size:28px">🤖</div>
-      <strong>Drop long video / gameplay for Autonomous AI Scan</strong>
-      <small>MP4, MOV, WebM · Full-Length Neural Audio & Action Analysis</small>
+      <strong>Drop long video / gameplay for 20s AI Scan</strong>
+      <small>MP4, MOV, WebM · Autonomous 20s Cut-to-Cut Engine</small>
       <input id="file" type="file" accept="video/*" hidden>
     </div>
     <div id="fileInfo" class="muted" style="margin-top:8px">No video selected yet.</div>
@@ -95,13 +93,12 @@ label{display:block;font-size:12px;color:#cbd2ed;margin:10px 0 4px;font-weight:6
       <video id="source" controls playsinline></video>
       <div class="empty" id="empty">Source video preview will appear here</div>
     </div>
-
     <div class="audio-box">
       <div class="audio-header">
         <span style="font-weight:700;font-size:13px">🔊 Studio Volume Booster & Limiter</span>
-        <span class="vol-pill" id="volLabel">240% (AI Optimized)</span>
+        <span class="vol-pill" id="volLabel">300% (Auto-Max)</span>
       </div>
-      <input type="range" id="volBoost" min="100" max="400" step="10" value="240">
+      <input type="range" id="volBoost" min="100" max="400" step="10" value="300">
       <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">
         <span>100%</span><span>250%</span><span>400% (Max Gain)</span>
       </div>
@@ -114,30 +111,28 @@ label{display:block;font-size:12px;color:#cbd2ed;margin:10px 0 4px;font-weight:6
     <div class="director-box">
       <label for="aiPrompt" style="margin-top:0">🧠 Autonomous AI Brain Instructions</label>
       <div style="display:flex;gap:8px">
-        <input id="aiPrompt" type="text" placeholder="e.g. Focus on high energy moments, make hooks extra aggressive...">
+        <input id="aiPrompt" type="text" placeholder="e.g. Focus on high action moments, aggressive hooks...">
         <button class="btn cyan" id="applyAiCmd" style="white-space:nowrap;padding:8px 12px">Update AI</button>
       </div>
     </div>
 
     <div class="actions"><button class="btn secondary" id="clear" disabled>Remove video</button></div>
-  </section>
-
+</section>
   <!-- COLUMN 2 -->
-  <section class="card">
-    <h2>2. Autonomous AI Director Engine</h2>
-    <p class="muted">Let the AI's built-in brain analyze your content and automatically design 6 professionally edited viral masterpieces.</p>
-    
+<section class="card">
+    <h2>2. Autonomous 20s AI Director Engine</h2>
+    <p class="muted">Autonomously crafts 6 distinct 20-second viral shorts with precise cut-to-cut action segments and zero manual editing needed.</p>
     <div class="actions" style="margin-top:10px">
-      <button class="btn fire" id="suggest" disabled>🧠 Run Autonomous AI Brain Analysis (6 Shorts)</button>
+      <button class="btn fire" id="suggest" disabled>🧠 Run Autonomous 20s AI Brain (6 Shorts)</button>
     </div>
 
     <div id="suggestions" class="suggestions">
-      <div class="muted">Upload a video to let the Autonomous AI Director build 6 viral shorts.</div>
+      <div class="muted">Upload a video to let the Autonomous AI Director build 6 strict 20s viral shorts.</div>
     </div>
 
     <div class="row" style="margin-top:10px">
       <div><label for="start">Start (sec)</label><input id="start" type="number" min="0" step=".1" value="0"></div>
-      <div><label for="end">End (sec)</label><input id="end" type="number" min="1" step=".1" value="25"></div>
+      <div><label for="end">End (sec)</label><input id="end" type="number" min="1" step=".1" value="20"></div>
     </div>
 
     <div class="row">
@@ -188,32 +183,30 @@ label{display:block;font-size:12px;color:#cbd2ed;margin:10px 0 4px;font-weight:6
     </div>
 
     <div class="actions">
-      <button class="btn cyan" id="preview" disabled>▶ Preview Autonomous Edit</button>
+      <button class="btn cyan" id="preview" disabled>▶ Preview Autonomous 20s Edit</button>
     </div>
     <div class="status" id="status" role="status" aria-live="polite"></div>
-  </section>
+</section>
 </div>
-
 <!-- COLUMN 3: PREVIEW & EXPORT -->
 <section class="card" style="margin-top:20px">
   <h2>3. 1080p Full HD Master Preview & Export</h2>
   <div class="preview-grid">
     <div class="phone"><canvas id="canvas" width="1080" height="1920"></canvas></div>
     <div class="controls">
-      <p class="muted">Renders in crystal-clear <strong>1080×1920 Full HD (12 Mbps)</strong> with real-time studio audio amplification, autonomous jump-cuts, and dynamic subtitle pop-ups.</p>
+      <p class="muted">Renders in crystal-clear <strong>1080×1920 Full HD (12 Mbps)</strong> with real-time studio audio amplification, exact 20s cut-to-cut segments, and dynamic subtitle pop-ups.</p>
       <div class="muted" id="durationLabel">No clip loaded yet.</div>
       <div class="progress"><div id="progress"></div></div>
       <div class="actions">
-        <button class="btn" id="export" disabled>⬇ Export Master HD Short</button>
+        <button class="btn" id="export" disabled>⬇ Export Master HD Short (20s)</button>
         <button class="btn secondary" id="play" disabled>Play / Pause Live Edit</button>
       </div>
-      <div class="notice">💡 <strong>Autonomous Mode Active:</strong> Click the brain analysis button to let the AI take full control and deliver 6 brilliantly edited viral clips.</div>
+      <div class="notice">💡 <strong>Autonomous 20s Mode Active:</strong> Click the brain analysis button to let the AI instantly build 6 exact 20-second cut-to-cut viral shorts.</div>
     </div>
   </div>
 </section>
-<div class="foot">ClipSpark AI Autonomous Director · Neural Video Editing & Studio Audio Engine</div>
+<div class="foot">ClipSpark AI Autonomous Director v5.0 · True 20-Second Cut-to-Cut Studio Engine</div>
 </main>
-
 <script>
 (()=>{
 const $=id=>document.getElementById(id);
@@ -289,7 +282,7 @@ function loadVideo(f){
   $('clear').disabled=false;
   energyTimeline=[];
   quietZones=[];
-  setStatus('Video loaded! Click "Run Autonomous AI Brain Analysis" to let AI take full control.');
+  setStatus('Video loaded! Click "Run Autonomous 20s AI Brain" to generate exact 20s clips.');
 }
 
 source.style.display='none';
@@ -301,13 +294,14 @@ drop.addEventListener('drop',e=>loadVideo(e.dataTransfer.files[0]));
 
 source.addEventListener('loadedmetadata',()=>{
   if(Number.isFinite(source.duration)){
-    $('end').value=Math.min(25,source.duration).toFixed(1);
+    const maxDur = Math.min(20, source.duration);
+    $('end').value=maxDur.toFixed(1);
     $('start').value='0';
     $('preview').disabled=false;
     $('play').disabled=false;
     $('export').disabled=false;
     $('durationLabel').textContent=`Total video length: ${fmt(source.duration)}`;
-    applyAiPreset(0,0,Math.min(25,source.duration),false);
+    applyAiPreset(0,0,maxDur,false);
     drawFrame();
   }
 });
@@ -324,7 +318,7 @@ $('clear').onclick=()=>{
   empty.style.display='block';
   $('fileInfo').textContent='No video selected yet.';
   $('suggest').disabled=$('preview').disabled=$('export').disabled=$('play').disabled=true;
-  $('suggestions').innerHTML='<div class="muted">Upload a video to let the AI Director build 6 viral shorts.</div>';
+  $('suggestions').innerHTML='<div class="muted">Upload a video to let the Autonomous AI Director build 6 viral shorts.</div>';
   setStatus('');
 };
 
@@ -345,7 +339,7 @@ async function runAutonomousAiBrain(fileObj,duration){
     const channel=audioBuf.getChannelData(0);
     const sampleRate=audioBuf.sampleRate;
 
-    const stepSamples=Math.floor(sampleRate*0.4);
+    const stepSamples=Math.floor(sampleRate*0.3);
     const timeline=[];
     let globalSum=0,globalCount=0,maxPeak=0;
 
@@ -371,7 +365,7 @@ async function runAutonomousAiBrain(fileObj,duration){
     }));
 
     if($('autoNormalize').checked&&avgRms>0){
-      const recommendedGain=Math.min(380,Math.max(140,Math.round((0.24/avgRms)*100)));
+      const recommendedGain=Math.min(400,Math.max(180,Math.round((0.26/avgRms)*100)));
       $('volBoost').value=recommendedGain;
       updateAudioSettings();
     }
@@ -379,29 +373,32 @@ async function runAutonomousAiBrain(fileObj,duration){
     quietZones=[];
     let qStart=null;
     for(const t of timeline){
-      if(t.rms<avgRms*0.25){
+      if(t.rms<avgRms*0.22){
         if(qStart===null)qStart=t.time;
       }else{
-        if(qStart!==null&&(t.time-qStart)>=1.5){
-          quietZones.push({start:qStart+0.2,end:t.time-0.2});
+        if(qStart!==null&&(t.time-qStart)>=1.2){
+          quietZones.push({start:qStart+0.15,end:t.time-0.15});
         }
         qStart=null;
       }
     }
 
     const candidates=[];
-    for(let i=0;i<timeline.length-4;i++){
-      if(timeline[i].time>duration-8)continue;
-      const score=timeline[i].rms*1.2+timeline[i+1].rms*1.5+timeline[i+2].rms*1.8;
+    for(let i=0;i<timeline.length-6;i++){
+      if(timeline[i].time>duration-20)continue;
+      let score=0;
+      for(let k=0;k<6;k++){
+        score+=(timeline[i+k]?timeline[i+k].rms:0)*(k===2||k===3?2.5:1.0);
+      }
       candidates.push({time:timeline[i].time,score});
     }
     candidates.sort((a,b)=>b.score-a.score);
 
     const chosen=[];
-    const minGap=Math.max(10,duration/8);
+    const minGap=Math.max(22,duration/8);
     for(const cand of candidates){
       if(chosen.length>=6)break;
-      const startPt=Math.max(0,cand.time-3.0);
+      const startPt=Math.max(0,cand.time-1.5);
       if(!chosen.some(c=>Math.abs(c-startPt)<minGap)){
         chosen.push(startPt);
       }
@@ -414,7 +411,7 @@ async function runAutonomousAiBrain(fileObj,duration){
 }
 
 function getCurrentAudioEnergy(t){
-  if(!energyTimeline.length)return 0.45;
+  if(!energyTimeline.length)return 0.5;
   const idx=Math.min(energyTimeline.length-1,Math.max(0,Math.floor(t*2)));
   return energyTimeline[idx].norm;
 }
@@ -433,7 +430,7 @@ function applyAiPreset(index,startSec,endSec,autoPlay=true){
     el.classList.toggle('active',idx===index);
   });
 
-  $('durationLabel').textContent=`Autonomous Short #${index+1}: ${fmt(startSec)} – ${fmt(endSec)} · Vol: ${$('volBoost').value}%`;
+  $('durationLabel').textContent=`Autonomous 20s Short #${index+1}: ${fmt(startSec)} – ${fmt(endSec)} · Vol: ${$('volBoost').value}%`;
   source.currentTime=startSec;
 
   if(autoPlay){
@@ -446,36 +443,36 @@ function applyAiPreset(index,startSec,endSec,autoPlay=true){
     source.pause();
     drawFrame();
   }
-  setStatus(`🤖 AI Brain activated Short #${index+1} with Autonomous Styling & ${$('volBoost').value}% Audio Boost!`);
+  setStatus(`🤖 Autonomous 20s Short #${index+1} loaded with precise cut-to-cut editing!`);
 }
 
 $('applyAiCmd').onclick=()=>{
   const promptTxt=$('aiPrompt').value.trim();
   if(!promptTxt)return;
   $('hookTitle').value=promptTxt.toUpperCase();
-  $('caption').value=`AI Directed Edit based on: "${promptTxt}" 🔥`;
+  $('caption').value=`AI 20s Cut Edit: "${promptTxt}" 🔥`;
   drawFrame();
-  setStatus('🧠 AI Brain successfully adapted its editing instructions to your prompt!');
+  setStatus('🧠 AI Brain successfully updated the 20s cut settings!');
 };
 
 $('suggest').onclick=async()=>{
   if(!source.duration)return;
   $('suggest').disabled=true;
-  setStatus('🤖 AI Brain is analyzing audio spectrum, detecting action climaxes & formatting 6 viral edits...');
+  setStatus('🤖 AI Brain is scanning cut-to-cut action spikes to generate exact 20-second clips...');
 
   const d=source.duration;
-  const clipLen=Math.min(26,Math.max(14,d*0.14));
+  const clipLen=Math.min(20, d);
   let starts=[];
 
-  if(file.files&&file.files[0]&&file.files[0].size<350*1024*1024){
+  if(file.files&&file.files[0]&&file.files[0].size<400*1024*1024){
     starts=await runAutonomousAiBrain(file.files[0],d);
   }
 
-  const fallback=[0.05,0.22,0.40,0.58,0.74,0.88];
+  const fallback=[0.02,0.18,0.36,0.54,0.72,0.86];
   let f=0;
   while(starts.length<6&&f<fallback.length){
     const c=Math.max(0,Math.min(d-clipLen,d*fallback[f++]));
-    if(!starts.some(s=>Math.abs(s-c)<6))starts.push(c);
+    if(!starts.some(s=>Math.abs(s-c)<10))starts.push(c);
   }
   starts.sort((a,b)=>a-b);
 
@@ -487,12 +484,12 @@ $('suggest').onclick=async()=>{
     el.className='suggestion'+(i===0?' active':'');
     el.innerHTML=`
       <div>
-        <b>🧠 AI Brain Short #${i+1}<span class="badge fire">99% VIRAL</span></b>
-        <small>${fmt(s)} – ${fmt(e)} · "${item.hook}" + Auto-Cut</small>
+        <b>🧠 20s Short #${i+1}<span class="badge fire">EXACT 20s</span></b>
+        <small>${fmt(s)} – ${fmt(e)} · "${item.hook}" + Cut-to-Cut</small>
       </div>
     `;
     const btn=document.createElement('button');
-    btn.textContent='Play Short';
+    btn.textContent='Play 20s Short';
     btn.onclick=()=>applyAiPreset(i,s,e,true);
     el.append(btn);
     $('suggestions').append(el);
@@ -501,16 +498,16 @@ $('suggest').onclick=async()=>{
   $('suggest').disabled=false;
   if(starts.length>0){
     applyAiPreset(0,starts[0],Math.min(d,starts[0]+clipLen),false);
-    setStatus(`✅ AI Brain Analysis Complete! 6 Autonomous Viral Shorts Created.`);
+    setStatus(`✅ Autonomous 20s AI Analysis Complete! 6 Perfect Cut-to-Cut Shorts Ready.`);
   }
 };
 
 function getColorFilter(grade,energy){
-  const punch=energy>0.7?1.09:1.0;
+  const punch=energy>0.65?1.12:1.0;
   switch(grade){
-    case 'vivid-gamer':return `contrast(${(1.18*punch).toFixed(2)}) saturate(1.36) brightness(${(1.04*punch).toFixed(2)})`;
-    case 'cyber-neon':return `contrast(${(1.24*punch).toFixed(2)}) saturate(1.5) hue-rotate(-8deg)`;
-    case 'crisp-hdr':return `contrast(${(1.15*punch).toFixed(2)}) saturate(1.2) brightness(1.07)`;
+    case 'vivid-gamer':return `contrast(${(1.2*punch).toFixed(2)}) saturate(1.38) brightness(${(1.05*punch).toFixed(2)})`;
+    case 'cyber-neon':return `contrast(${(1.26*punch).toFixed(2)}) saturate(1.52) hue-rotate(-8deg)`;
+    case 'crisp-hdr':return `contrast(${(1.16*punch).toFixed(2)}) saturate(1.22) brightness(1.08)`;
     default:return 'none';
   }
 }
@@ -525,16 +522,16 @@ function drawFrame(){
   const doShake=$('fxShake').checked;
   const doProgress=$('fxProgress').checked;
 
-  const r=validRangeSilent()||{a:0,b:source.duration||30};
+  const r=validRangeSilent()||{a:0,b:Math.min(source.duration||30, 20)};
   const clipDuration=Math.max(0.1,r.b-r.a);
   const elapsed=Math.max(0,source.currentTime-r.a);
   const progressRatio=Math.min(1,elapsed/clipDuration);
 
   const energy=getCurrentAudioEnergy(source.currentTime);
-  const isHype=energy>0.65;
-  const impactZoom=doImpactZoom?(1+(energy*0.16)+(isHype?0.07:0)):1;
-  const shakeX=(doShake&&isHype)?(Math.sin(elapsed*50)*16):0;
-  const shakeY=(doShake&&isHype)?(Math.cos(elapsed*54)*12):0;
+  const isHype=energy>0.62;
+  const impactZoom=doImpactZoom?(1+(energy*0.18)+(isHype?0.08:0)):1;
+  const shakeX=(doShake&&isHype)?(Math.sin(elapsed*55)*18):0;
+  const shakeY=(doShake&&isHype)?(Math.cos(elapsed*60)*14):0;
 
   ctx.save();
   ctx.fillStyle='#050711';
@@ -551,7 +548,7 @@ function drawFrame(){
 
     ctx.save();
     ctx.filter=colorCss;
-    const baseFit=Math.min(W/vw,H/vh)*1.48*impactZoom;
+    const baseFit=Math.min(W/vw,H/vh)*1.5*impactZoom;
     const dw=vw*baseFit,dh=vh*baseFit;
     ctx.drawImage(source,(W-dw)/2+shakeX,(H-dh)/2+25+shakeY,dw,dh);
     ctx.restore();
@@ -607,9 +604,9 @@ function drawFrame(){
   }
 
   if(isHype&&doImpactZoom){
-    const grad=ctx.createRadialGradient(W/2,H/2,W*0.3,W/2,H/2,H*0.68);
+    const grad=ctx.createRadialGradient(W/2,H/2,W*0.3,W/2,H/2,H*0.7);
     grad.addColorStop(0,'rgba(244,63,94,0)');
-    grad.addColorStop(1,'rgba(244,63,94,0.32)');
+    grad.addColorStop(1,'rgba(244,63,94,0.35)');
     ctx.fillStyle=grad;
     ctx.fillRect(0,0,W,H);
   }
@@ -621,7 +618,7 @@ function drawFrame(){
     const textW=Math.min(W-110,ctx.measureText(hook).width);
     const boxW=textW+76,boxH=96,boxX=(W-boxW)/2,boxY=130;
 
-    ctx.fillStyle='rgba(10, 14, 28, 0.92)';
+    ctx.fillStyle='rgba(10, 14, 28, 0.94)';
     roundRect(ctx,boxX,boxY,boxW,boxH,24);
     ctx.fill();
 
@@ -644,7 +641,7 @@ function drawFrame(){
     ctx.textAlign='center';
     ctx.textBaseline='middle';
     const words=cap.split(/\s+/);
-    const activeWordIdx=Math.floor((elapsed*3.0)%Math.max(1,words.length));
+    const activeWordIdx=Math.floor((elapsed*3.2)%Math.max(1,words.length));
 
     let lines=[],line=[];
     ctx.font='900 66px system-ui, Arial, sans-serif';
@@ -663,7 +660,7 @@ function drawFrame(){
     const baseY=H*0.79,lh=84;
     if(style==='neon-box'){
       const maxW=Math.max(...lines.map(l=>ctx.measureText(l.map(x=>x.w).join(' ')).width));
-      ctx.fillStyle='rgba(10, 12, 26, 0.85)';
+      ctx.fillStyle='rgba(10, 12, 26, 0.88)';
       roundRect(ctx,(W-maxW)/2-36,baseY-(lines.length*lh)/2-22,maxW+72,lines.length*lh+44,22);
       ctx.fill();
       ctx.strokeStyle='#22d3ee';
@@ -728,7 +725,7 @@ function handleAutonomousJumpCuts(r){
   if(!$('fxJumpCut').checked||!quietZones.length)return;
   const cur=source.currentTime;
   for(const q of quietZones){
-    if(cur>=q.start&&cur<q.end&&q.end<r.b-1){
+    if(cur>=q.start&&cur<q.end&&q.end<r.b-0.5){
       source.currentTime=q.end;
       break;
     }
@@ -761,7 +758,7 @@ $('preview').onclick=()=>{
   source.currentTime=r.a;
   source.play().catch(()=>{});
   startPreviewLoop();
-  setStatus(`Playing Autonomous AI Short with ${$('volBoost').value}% Boosted Audio!`);
+  setStatus(`Playing Autonomous 20s Short with ${$('volBoost').value}% Boosted Audio!`);
 };
 
 $('play').onclick=()=>{
@@ -778,7 +775,7 @@ $('play').onclick=()=>{
     source.currentTime=r.a;
     source.play().catch(()=>setStatus('Click play on the source video first.'));
     startPreviewLoop();
-    setStatus(`Playing Autonomous Short (${$('volBoost').value}% Audio Active).`);
+    setStatus(`Playing 20s Short (${$('volBoost').value}% Audio Active).`);
   }
 };
 
@@ -816,7 +813,7 @@ $('export').onclick=async()=>{
   exporting=true;
   previewPlaying=false;
   $('export').disabled=true;
-  setStatus(`🎬 Rendering 1080p HD Master + ${$('volBoost').value}% Studio Audio Gain...`);
+  setStatus(`🎬 Rendering 1080p HD 20s Master + ${$('volBoost').value}% Studio Audio Gain...`);
 
   const mime=chooseMime();
   const canvasStream=canvas.captureStream(30);
@@ -845,13 +842,13 @@ $('export').onclick=async()=>{
     const a=document.createElement('a');
     const ext=type.includes('mp4')?'mp4':'webm';
     a.href=url;
-    a.download=`ClipSpark-Autonomous-AI-Short.${ext}`;
+    a.download=`ClipSpark-20s-Autonomous-Short.${ext}`;
     document.body.appendChild(a);
     a.click();
     a.remove();
     setTimeout(()=>URL.revokeObjectURL(url),60000);
     $('progress').style.width='100%';
-    setStatus(`✅ Autonomous Master Export Complete! (${(blob.size/1024/1024).toFixed(1)} MB · 1080p HD)`);
+    setStatus(`✅ Autonomous 20s Master Export Complete! (${(blob.size/1024/1024).toFixed(1)} MB · 1080p HD)`);
     cleanup();
   };
 
@@ -859,7 +856,7 @@ $('export').onclick=async()=>{
     exporting=false;
     $('export').disabled=false;
     source.pause();
-    canvasStream.getVideoTracks().forEach(t=>t.stop());
+    canvasStream.getVideoTracks().forEach(t=>loadVideo.stop?.()||t.stop());
   }
 
   source.pause();
@@ -901,6 +898,5 @@ $('export').onclick=async()=>{
 ['caption','hookTitle'].forEach(id=>$(id).addEventListener('input',drawFrame));
 ['style','cropMode','colorGrade','fxImpactZoom','fxShake','fxProgress'].forEach(id=>$(id).addEventListener('change',drawFrame));
 })();
-</script>
 </body>
 </html>
